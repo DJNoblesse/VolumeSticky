@@ -58,7 +58,7 @@ public class VSService extends Service{
         };
 
         mTimer = new Timer();
-        mTimer.schedule(mTask, 1000, 60000);  //서비스 실행 시 1초 후 체크. 이후 1분마다 체크
+        mTimer.schedule(mTask, 1000, 300000);  //서비스 실행 시 1초 후 체크. 이후 5분마다 체크
     }
 
     @Override
