@@ -31,8 +31,23 @@ public class VSService extends Service{
             @Override
             public void run() {
                 AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
-                Log.d(TAG, "Volume MAX");
+
+                switch(audioManager.getRingerMode()){
+                    case AudioManager.RINGER_MODE_VIBRATE:
+                        // 진동
+                        break;
+                    case AudioManager.RINGER_MODE_NORMAL:
+                        //소리
+                        audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
+                        Log.d(TAG, "Volume MAX");
+                        break;
+                    case AudioManager.RINGER_MODE_SILENT:
+                        // 무음
+                        break;
+                }
+
+//                audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
+//                Log.d(TAG, "Volume MAX");
             }
         };
 
@@ -44,6 +59,7 @@ public class VSService extends Service{
     public void onDestroy() {
         Toast.makeText(this, "VSService 중지", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onDestroy()");
+        super.onDestroy();
         stopSelf();
     }
 
