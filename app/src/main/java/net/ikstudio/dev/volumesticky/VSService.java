@@ -35,14 +35,17 @@ public class VSService extends Service{
                 switch(audioManager.getRingerMode()){
                     case AudioManager.RINGER_MODE_VIBRATE:
                         // 진동
+                        Log.d(TAG, "Checked Status: VIBRATE");
                         break;
                     case AudioManager.RINGER_MODE_NORMAL:
                         //소리
                         audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
+                        Log.d(TAG, "Checked Status: RING");
                         Log.d(TAG, "Volume MAX");
                         break;
                     case AudioManager.RINGER_MODE_SILENT:
                         // 무음
+                        Log.d(TAG, "Checked Status: SILENT");
                         break;
                 }
 
@@ -52,7 +55,7 @@ public class VSService extends Service{
         };
 
         mTimer = new Timer();
-        mTimer.schedule(mTask, 1000, 300000);
+        mTimer.schedule(mTask, 1000, 180000);
     }
 
     @Override
