@@ -30,7 +30,7 @@ public class VSService extends Service{
             @Override
             public void run() {
 
-                //서비스가 활성화 상태일 때만 실행하는 코드를 임시로 추가. (powerswitch 값이 0이 되더라도 주기적으로 체크함)
+                //서비스가 활성화 상태일 때만 실행하는 코드를 임시로 추가. (powerswitch 값이 0이 되더라도 볼륨을 안 올릴 뿐, 주기적으로 체크함)
                 if (powerswitch == 1) {
                     AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
