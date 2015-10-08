@@ -9,12 +9,12 @@
 기능을 잠시 끄고 싶은 경우에는 앱 내에서 서비스 일시 비활성화가 가능합니다. (이것도 테스트되지 않았으므로 권장하지 않습니다. 언인스톨하셨다가 필요할 때 재설치를 권장합니다.)
 
 
+
 (ENGLISH)
 
 This app is made for Samsung Galaxy S4 or every android phone if have ringtone volume is down issue in every time.
 
-
-your phone's ringtone volume is force maximum increase every 5 minute for you.
+your phone's ringtone volume is force maximum increase every 5 minute for you.(Default value. You can change.)
 
 Include code a "Detect Vibrate Mode". but NOT TESTED.
 
